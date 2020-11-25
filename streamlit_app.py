@@ -25,7 +25,7 @@ def load_data(nrows):
 data = load_data(10000)
 original_data = data
 
-st.header("Accidentes filtrados por el número de personas implicadas:")
+st.header("Accidentes filtrados por número de personas implicadas:")
 injured_people = st.slider("", 0, 16)
 st.map(data.query("number_of_persons_injured >= @injured_people")[["latitude", "longitude"]].dropna(how="any"))
 st.header(" ")
